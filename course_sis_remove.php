@@ -11,7 +11,7 @@ $count = count($result);
 $sis_or_canvas = $_POST['type'];
 $i = 0;
 $o = 0;
-if($sis_or_canvas === 1 ){	
+if($sis_or_canvas === "1" ){	
 			foreach($result as $course_id){
 
 			//$sis_course_data = 'course[sis_course_id]='; 
