@@ -53,8 +53,12 @@
 																<option value="conclude">Conclude</option>
 																<option value="delete">Delete</option>
 																<option value="undelete">Undelete</option>
-															</select>												
-														<input type='submit' name='submit' value='Submit' class='btn btn-primary'>
+															</select>
+															<label class="checkbox">
+															<input type="checkbox" value="1" required>I know what I am doing so let me run it!</label>	
+															<label class="checkbox">
+															<input type="checkbox" value="1" required>Yes I am sure i want to do this.</label>					
+														<button id='start' class='btn btn-info' data-loading-text='Working...' type='submit'>Run It!</button>
 												</fieldset>
 								</form>
 								<div id="events_response">
@@ -86,9 +90,12 @@
 														<select name='type' required>
 															<option value="1">SIS ID</option>
 															<option value="0">Canvas Course ID</option>
-														</select>										
-													<input type='submit' name='submit' value='Submit' class='btn btn-primary'>
-												</fieldset>
+														</select>
+														<label class="checkbox">
+															<input type="checkbox" value="1" required>I know what I am doing so let me run it!</label>	
+															<label class="checkbox">
+															<input type="checkbox" value="1" required>Yes I am sure i want to do this.</label>										
+														<button id='start' class='btn btn-info' data-loading-text='Working...' type='submit'>Run It!</button>												</fieldset>
 								</form>
 								<div id="delete_response">
 								</div>
@@ -119,9 +126,12 @@
 														<select name='type' required>
 															<option value="1">SIS ID</option>
 															<option value="0">Canvas User ID</option>
-														</select>										
-													<input type='submit' name='submit' value='Submit' class='btn btn-primary'>
-												</fieldset>
+														</select>
+														<label class="checkbox">
+															<input type="checkbox" value="1" required>I know what I am doing so let me run it!</label>	
+															<label class="checkbox">
+															<input type="checkbox" value="1" required>Yes I am sure i want to do this.</label>										
+														<button id='start' class='btn btn-info' data-loading-text='Working...' type='submit'>Run It!</button>												</fieldset>
 								</form>
 								<div id="sis_remove_response">
 								</div>
@@ -141,7 +151,15 @@ $('#course_publish').collapse([{"hide");
 $('#course_delete').collapse("hide");
 </script>  -->
 <script>
-	$("#events").submit(function(){
+$("#events").submit(function(){
+		/*$('#start').click(function () {
+        var btn = $(this)
+        btn.button('loading')
+        setTimeout(function () {
+            btn.button('reset')
+        }, 3000)
+    });*/
+	$('#start').button('loading');
 
     // Intercept the form submission
     var formdata = $(this).serialize(); // Serialize all form data
@@ -150,14 +168,16 @@ $('#course_delete').collapse("hide");
     $.post( "course_event.php", formdata, function( data ) {
         // Act upon the data returned, setting it to #success <div>
         $("#events_response").html ( data );
-    });
+    }).success(function(){
+	$('#start').button('reset');
+	});
 
     return false; // Prevent the form from actually submitting
 });
 </script>
 <script>
 	$("#delete").submit(function(){
-
+	$('#start').button('loading');
     // Intercept the form submission
     var formdata = $(this).serialize(); // Serialize all form data
 
@@ -165,7 +185,9 @@ $('#course_delete').collapse("hide");
     $.post( "course_sis_remove.php", formdata, function( data ) {
         // Act upon the data returned, setting it to #success <div>
         $("#delete_response").html ( data );
-    });
+    }).success(function(){
+	$('#start').button('reset');
+	});
 
     return false; // Prevent the form from actually submitting
 });
@@ -181,7 +203,9 @@ $('#course_delete').collapse("hide");
     $.post( "sis_id_remove.php", formdata, function( data ) {
         // Act upon the data returned, setting it to #success <div>
         $("#sis_remove_response").html ( data );
-    });
+    }).success(function(){
+	$('#start').button('reset');
+	});
 
     return false; // Prevent the form from actually submitting
 });
