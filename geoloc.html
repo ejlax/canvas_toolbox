@@ -1,0 +1,56 @@
+<!DOCTYPE html />
+<html>
+	<head>
+	</head>
+	<body>
+		<button id="locale" onclick=initiateGeolocation();>Test</button>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+
+
+
+	<div id="location">
+
+	</div>
+	<div id="map">
+	</div>
+	<div>
+		<input class="color">
+		
+	</div>
+	</body>
+</html>
+<script type="text/javascript" src="jscolor/jscolor.js"></script>
+	<script>
+
+	function initiateGeolocation (){
+	navigator.geolocation.getCurrentPosition(handle_geolocation_query,handle_errors);
+
+	}
+	function handle_errors(error){
+	alert('error');
+	}
+
+	function handle_geolocation_query(position){
+	alert('latitude: ' + position.coords.latitude + ' Longitude: ' + position.coords.longitude);
+	
+	var url = "http://maps.google.com/maps/api/staticmap?sensor=false&center="
+	+ position.coords.latitude + ","
+	+ position.coords.longitude
+	+ "&zoom=15&size=300x400&markers=color:blue|"
+	+ "labels:S|"
+	+ position.coords.latitude + ","
+	+ position.coords.longitude;
+
+	alert(url);
+	$("#map").remove();
+	$(document.body).append(
+		$(document.createElement("img"))
+		.attr("src",url)
+		.attr("id","map")
+		);
+
+	};
+
+	
+	</script>

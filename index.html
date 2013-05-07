@@ -1,0 +1,403 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Getting · Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+<link href="http://twitter.github.io/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
+<link href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.css" type="stylesheet">
+<link href="http://twitter.github.io/bootstrap/assets/css/docs.css" rel="stylesheet">
+
+<style>
+.affix {
+    position: fixed; 
+    top: 40px; 
+    left: 36px;
+}
+
+section {
+  padding-top: 50px;
+}
+/*. {
+  width: 200px;
+}*/
+</style>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="assets/ico/favicon.png">
+
+  </head>
+
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+    <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <div class="nav-collapse collapse">
+                      <a class="brand" style="color: #ffffff;" href="./index.html">Canvas Customs</a>
+            <ul class="nav">
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">JavaScript</a></li>
+              <li><a href="cssbuilder.html">CSS Builder</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Subhead
+================================================== -->
+
+
+
+  <div class="container-fluid">
+
+    <!-- Docs nav
+    ================================================== -->
+    <div class="row-fluid">
+      <div class="span3 nav-list bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav">
+          <li><a href="#hide_right_side"><i class="icon-chevron-right"></i> Hide Right Side</a></li>
+          <li><a href="#add_favicon"><i class="icon-chevron-right"></i> Add Favicon</a></li>
+          <li><a href="#auto_fit_vids"><i class="icon-chevron-right"></i> Auto Scale Videos</a></li>
+          <li><a href="#html-template"><i class="icon-chevron-right"></i> HTML template</a></li>
+          <li><a href="#examples"><i class="icon-chevron-right"></i> Examples</a></li>
+          <li><a href="#what-next"><i class="icon-chevron-right"></i> What next?</a></li>
+        </ul>
+      </div>
+      <div class="span9">
+      <div class="hero-unit">
+            <h1>Canvas Customs</h1>
+            <p>This is a web app that will help Canvas customers to create their custom CSS and Javascript files in super simple way. How Simple? Try it yourself.</p>
+            <p><a href="#" class="btn btn-primary btn-large">Get Started &raquo;</a></p>
+          </div>
+        <section id="content" >
+        <!-- START OF SECTION -->
+        <section id="hide_right_side">
+          <div class="media">
+            <a class="pull-left" href="#hide_right_panel_modal" data-toggle="modal">
+              <img class="media-object" src="https://s3.amazonaws.com/SSL_Assets/Steven+H+AWS+/Hide_Right_Pane.png" height="200" width="200">
+            </a>
+            <div class="media-body"> 
+              <h2 class="media-heading">Hide Right Side</h2>
+              <div class="lead"> 
+              Don't push the red button! This is always a big hit. Saves a lot of heartaches and headaches
+            </div>
+              <p><a class="btn" id="show_add_favicon" href="#hide_right_panel_modal" data-toggle="modal">View code &raquo;</a></p>
+            </div>
+                          
+          </div>
+        </section>
+        <!--  END OF SECTION -->
+        <!-- START OF SECTION -->
+        <section id="add_favicon">
+          <div class="media">
+            <a class="pull-left" href="#hide_right_panel_modal" data-toggle="modal">
+              <img class="media-object" src="https://s3.amazonaws.com/SSL_Assets/Steven+H+AWS+/Hide_Right_Pane.png" height="200" width="200">
+            </a>
+            <div class="media-body"> 
+              <h2 class="media-heading">Add Favicon</h2>
+              <div class="lead"> 
+              This will add a customer icon to the top of the browser window.
+            </div>
+              <p><a class="btn" id="show_add_favicon" href="#add_favicon_modal" data-toggle="modal">View code &raquo;</a></p>
+            </div>
+                          
+          </div>
+        </section>
+        <!--  END OF SECTION -->
+        <!-- START OF SECTION -->
+        <section id="auto_fit_vids">
+          <div class="media">
+            <a class="pull-left" href="#hide_right_panel_modal" data-toggle="modal">
+              <img class="media-object" src="https://s3.amazonaws.com/SSL_Assets/Steven+H+AWS+/Hide_Right_Pane.png" height="200" width="200">
+            </a>
+            <div class="media-body"> 
+              <h2 class="media-heading">Auto Scale Videos to Window Size</h2>
+              <div class="lead"> 
+              Don't push the red button! This is always a big hit. Saves a lot of heartaches and headaches
+            </div>
+              <p><a class="btn" id="" href="#auto_fit_vids_modal" data-toggle="modal">View code &raquo;</a></p>
+            </div>
+                          
+          </div>
+        </section>
+        <!--  END OF SECTION -->
+        <!-- START OF SECTION -->
+        <section id="">
+          <div class="media">
+            <a class="pull-left" href="#hide_right_panel_modal" data-toggle="modal">
+              <img class="media-object" src="https://s3.amazonaws.com/SSL_Assets/Steven+H+AWS+/Hide_Right_Pane.png" height="200" width="200">
+            </a>
+            <div class="media-body"> 
+              <h2 class="media-heading">Auto Scale Videos to Window Size</h2>
+              <div class="lead"> 
+              Don't push the red button! This is always a big hit. Saves a lot of heartaches and headaches
+            </div>
+              <p><a class="btn" id="show_add_favicon" href="#add_favicon_modal" data-toggle="modal">View code &raquo;</a></p>
+            </div>
+                          
+          </div>
+        </section>
+        <!--  END OF SECTION -->
+        <!-- START OF SECTION -->
+        <section>
+          <div class="media">
+            <a class="pull-left" href="#hide_right_panel_modal" data-toggle="modal">
+              <img class="media-object" src="https://s3.amazonaws.com/SSL_Assets/Steven+H+AWS+/Hide_Right_Pane.png" height="200" width="200">
+            </a>
+            <div class="media-body"> 
+              <h2 class="media-heading">Auto Scale Videos to Window Size</h2>
+              <div class="lead"> 
+              Don't push the red button! This is always a big hit. Saves a lot of heartaches and headaches
+            </div>
+              <p><a class="btn" id="show_add_favicon" href="#add_favicon_modal" data-toggle="modal">View code &raquo;</a></p>
+            </div>
+                          
+          </div>
+        </section>
+        <!--  END OF SECTION -->
+        <!-- START OF SECTION -->
+        <section>
+          <div class="media">
+            <a class="pull-left" href="#hide_right_panel_modal" data-toggle="modal">
+              <img class="media-object" src="https://s3.amazonaws.com/SSL_Assets/Steven+H+AWS+/Hide_Right_Pane.png" height="200" width="200">
+            </a>
+            <div class="media-body"> 
+              <h2 class="media-heading">Auto Scale Videos to Window Size</h2>
+              <div class="lead"> 
+              Don't push the red button! This is always a big hit. Saves a lot of heartaches and headaches
+            </div>
+              <p><a class="btn" id="show_add_favicon" href="#add_favicon_modal" data-toggle="modal">View code &raquo;</a></p>
+            </div>
+                          
+          </div>
+        </section>
+        <!--  END OF SECTION -->
+          </div><!--/row-->
+          </div><!--/row-->
+        </section>
+        </div><!--/span-->
+      </div><!--/row-->
+      <!--  START MODALS -->
+      <!-- Modal -->
+<div id="auto_fit_vids_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Auto Fit Videos Javascript</h3>
+  </div>
+  <div class="modal-body">
+    <iframe src="http://player.vimeo.com/video/28523422?title=0&amp;byline=0&amp;portrait=0&amp;color=4584be" width="500" height="350" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    <p><pre>//// CODE FOR FITVIDS ////
+$(document).ready(function(){
+  /*global jQuery */
+/*jshint multistr:true browser:true */
+/*!
+* FitVids 1.0
+*
+* Copyright 2011, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
+* Credit to Thierry Koblentz - http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/
+* Released under the WTFPL license - http://sam.zoy.org/wtfpl/
+*
+* Date: Thu Sept 01 18:00:00 2011 -0500
+*/
+
+(function( $ ){
+
+  "use strict";
+
+  $.fn.fitVids = function( options ) {
+    var settings = {
+      customSelector: null
+    };
+
+    var div = document.createElement('div'),
+        ref = document.getElementsByTagName('base')[0] || document.getElementsByTagName('script')[0];
+
+    div.className = 'fit-vids-style';
+    div.innerHTML = '&shy;&lt;style&gt;         \
+      .fluid-width-video-wrapper {        \
+         width: 100%;                     \
+         position: relative;              \
+         padding: 0;                      \
+      }                                   \
+                                          \
+      .fluid-width-video-wrapper iframe,  \
+      .fluid-width-video-wrapper object,  \
+      .fluid-width-video-wrapper embed {  \
+         position: absolute;              \
+         top: 0;                          \
+         left: 0;                         \
+         width: 100%;                     \
+         height: 100%;                    \
+      }                                   \
+    </style>';
+
+    ref.parentNode.insertBefore(div,ref);
+
+    if ( options ) {
+      $.extend( settings, options );
+    }
+
+    return this.each(function(){
+      var selectors = [
+        "iframe[src*='player.vimeo.com']",
+        "iframe[src*='youtube.com']",
+        "iframe[src*='youtube-nocookie.com']",
+        "iframe[src*='kickstarter.com']",
+        "object",
+        "embed"
+      ];
+
+      if (settings.customSelector) {
+        selectors.push(settings.customSelector);
+      }
+
+      var $allVideos = $(this).find(selectors.join(','));
+
+      $allVideos.each(function(){
+        var $this = $(this);
+        if (this.tagName.toLowerCase() === 'embed' && $this.parent('object').length || $this.parent('.fluid-width-video-wrapper').length) { return; }
+        var height = ( this.tagName.toLowerCase() === 'object' || ($this.attr('height') && !isNaN(parseInt($this.attr('height'), 10))) ) ? parseInt($this.attr('height'), 10) : $this.height(),
+            width = !isNaN(parseInt($this.attr('width'), 10)) ? parseInt($this.attr('width'), 10) : $this.width(),
+            aspectRatio = height / width;
+        if(!$this.attr('id')){
+          var videoID = 'fitvid' + Math.floor(Math.random()*999999);
+          $this.attr('id', videoID);
+        }
+        $this.wrap('&lt;div class="fluid-width-video-wrapper">&lt;/div>').parent('.fluid-width-video-wrapper').css('padding-top', (aspectRatio * 100)+"%");
+        $this.removeAttr('height').removeAttr('width');
+      });
+    });
+  };
+})( jQuery );
+$("#content").fitVids();
+});</pre></p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <a href="https://raw.github.com/davatron5000/FitVids.js/master/jquery.fitvids.js" class="btn btn-primary"><i class="icon-white icon-download-alt"></i> Download</a>
+  </div>
+</div><!-- end modal -->
+<div id="add_favicon_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Add Favicon Javascript</h3>
+  </div>
+  <div class="modal-body">
+    <p><pre>$('head').append('&lt;link rel="shortcut icon" href="&lt;add png reference here>" type="image/x-icon">');</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <a href="https://raw.github.com/davatron5000/FitVids.js/master/jquery.fitvids.js" class="btn btn-primary"><i class="icon-white icon-download-alt"></i> Download</a>
+  </div>
+</div><!-- end modal -->
+<div id="hide_right_panel_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Hide Right Panel Javascript</h3>
+  </div>
+  <div class="modal-body">
+    <p><a class="thumbnail" href="https://s3.amazonaws.com/SSL_Assets/Steven+H+AWS+/Hide_Right_Pane.png" style="width: 360px; height: 270px;"><img src="https://s3.amazonaws.com/SSL_Assets/Steven+H+AWS+/Hide_Right_Pane.png"></a></p>
+    <div id="modal_code">
+      <p>
+        <pre>$(document).ready(function() {
+
+  $("#right-side").prepend('&lt;div class="pull-right unstyled" align="right">&lt;button class="btn btn-small" id="hide_right" >&lt;a href="#">Hide Right Pane&nbsp&lt;a/>&lt;/button>&lt;/div>&lt;br>');
+  $("#hide_right").click(function(){
+    $("#right-side-wrapper").fadeOut(500);
+    //$("body.with-right-side").hide("slide", { direction: "left" }, 1000);
+    $("#breadcrumbs").append('&lt;ul class="pull-right unstyled" align="right">&lt;li>&lt;button class="btn btn-small" style="margin-bottom: 10px;" id="show_right" >&lt;a href="">Show Right Pane&nbsp&lt;/a>&lt;/li>&lt;/ul>');
+    $("#hide_right").remove();
+    $("body").removeClass("with-right-side");
+  });
+});</pre></p>
+</div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div><!-- end modal -->
+
+
+      <hr>
+
+      <footer>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://twitter.github.io/bootstrap/assets/js/bootstrap.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.js" type="text/javascript"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+
+
+  </body>
+</html>
+<script>
+//$("#content").scrollspy();
+//$(".bs-docs-sidebar").affix();
+</script>
+<script>
+/* From application.js on bootstrap docs */
+!function ($) {
+  $(function(){
+    var $window = $(window)
+     // side bar
+    $('.bs-docs-sidenav').affix({
+      offset: {
+        top: function () { return $window.width() <= 980 ? 290 : 0 }
+      , bottom: 270
+      }
+    })
+  })
+}(window.jQuery)</script>
+<script>
+$("#show_modal_body").click(function(){
+  $("#modal_code").show();
+})
+</script>
+<script>
+$(function(){
+  $('.bs-docs-sidenav a').click(function(){
+    var ref = $(this).attr('href');
+    $(ref).effect("highlight", {color: "#ADD8E6"}, 1000);
+    // or alert($(this).hash();
+  });
+});
+</script>
+<script>
+function showContent () {
+    $(".hero-unit").fadeOut(500);
+    $("#content").show().fadeIn(1000);
+  }
+</script>

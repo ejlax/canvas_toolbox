@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Course Publish Tool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <base target="_blank">
+
+    <!-- Le styles -->
+<style>
+.header{
+	margin-left: 15px;
+	margin-right: 10px;
+}
+</style>
+<link href="http://twitter.github.io/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
+<link href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.css" type="stylesheet">
+<link href="http://twitter.github.io/bootstrap/assets/css/docs.css" rel="stylesheet">
+<body>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class='span12'>
+				<p class='lead text-center'>Canvas Admin Toolbox</p>
+				<hr>
+			</div>
+		</div>
+		<div class="row-fluid">
+
+			<div class="span4">
+				<div class="accordion" id="toolbox1">
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<h3 class="accordion-toggle" data-toggle="collapse" data-parent="#toolbox1" href="#course_publish">Course Publish Tool</h3>
+							<p class='header'>This tool can be used to mass publish/conclude/undelete/delete a large list of courses.</p> 
+						</div>
+						<div class="accordion-body collapse"  id="course_publish">
+							<div class="accordion-inner">
+								<form id='events' class='form-horizontal' method='post' action=''>
+												<fieldset>
+			  												<label>Canvas Domain (something.instructure.com)</label>
+															<input type='text' name='domain' class='InputBox' required>
+															<label>Course List (Comma separated, No spaces)</label>
+															<input type='textbox' name='course_list' class='InputBox' required>
+															<label>Account Number</label>
+															<input type='text' name='account_number' class='InputBox' required><br>
+															<!-- //TODO add support for term publish -->
+															<label>Event Type</label>
+															<select name='event' required>
+																<option value="offer">Publish</option>
+																<option value="conclude">Conclude</option>
+																<option value="delete">Delete</option>
+																<option value="undelete">Undelete</option>
+															</select>												
+														<input type='submit' name='submit' value='Submit' class='btn btn-primary'>
+												</fieldset>
+								</form>
+								<div id="events_response">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!-- end accordion -->
+			</div><!-- end span -->
+			<div class="span4">
+				<div class="accordion" id="toolbox2">
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<h3 class="accordion-toggle" data-toggle="collapse" data-parent="#toolbox2" href="#course_delete">Course Delete Tool</h3>
+							<p class="text-left header">This tool can be used to delete a large list of courses in Canvas. If there is an SIS ID associated with the course, It will also delete the SIS ID from the course as well so it can be re-used.</p>
+						</div>
+						<div class="accordion-body collapse"  id="course_delete">
+							<div class="accordion-inner">
+								<form id='delete' class='form-horizontal' method='post' action=''>
+												<fieldset>
+		  												<label>Canvas Domain (something.instructure.com)</label>
+														<input type='text' name='domain' class='InputBox' required>
+														<label>Course List (Comma separated, No spaces)</label>
+														<input type='textbox' name='course_list' class='InputBox' required>
+														<!--  <label>Account Number</label>
+														<input type='text' name='account_number' class='InputBox' required><br>  -->
+														<!-- //TODO add support for term publish -->
+														<label>Course ID Type</label>
+														<select name='type' required>
+															<option value="1">SIS ID</option>
+															<option value="0">Canvas Course ID</option>
+														</select>										
+													<input type='submit' name='submit' value='Submit' class='btn btn-primary'>
+												</fieldset>
+								</form>
+								<div id="delete_response">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!-- end accordion -->
+			</div><!-- end span -->
+		</div>
+		<div class="row-fluid">
+			<div class="span4">
+				<div class="accordion" id="toolbox3">
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<h3 class="accordion-toggle" data-toggle="collapse" data-parent="#toolbox4" href="#user_clean">User SIS ID Reset</h3>
+							<p class='header'>This tool can be used to clean up SIS ID for users</p> 
+						</div>
+						<div class="accordion-body collapse"  id="user_clean">
+							<div class="accordion-inner">
+								<form id='sis_remove' class='form-horizontal' method='post' action=''>
+												<fieldset>
+		  												<label>Canvas Domain (something.instructure.com)</label>
+														<input type='text' name='domain' class='InputBox' required>
+														<label>Users List (Comma separated, No spaces)</label>
+														<input type='textbox' name='user_list' class='InputBox' required>
+														<!-- //TODO add support for term publish -->
+														<label>User ID Type</label>
+														<select name='type' required>
+															<option value="1">SIS ID</option>
+															<option value="0">Canvas User ID</option>
+														</select>										
+													<input type='submit' name='submit' value='Submit' class='btn btn-primary'>
+												</fieldset>
+								</form>
+								<div id="sis_remove_response">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!-- end accordion -->
+			</div><!-- end span -->
+		</div><!--  end row -->
+	</div>
+</body>
+</html>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+<!--  <Script>
+$('#course_publish').collapse([{"hide");
+$('#course_delete').collapse("hide");
+</script>  -->
+<script>
+	$("#events").submit(function(){
+
+    // Intercept the form submission
+    var formdata = $(this).serialize(); // Serialize all form data
+
+    // Post data to your PHP processing script
+    $.post( "course_event.php", formdata, function( data ) {
+        // Act upon the data returned, setting it to #success <div>
+        $("#events_response").html ( data );
+    });
+
+    return false; // Prevent the form from actually submitting
+});
+</script>
+<script>
+	$("#delete").submit(function(){
+
+    // Intercept the form submission
+    var formdata = $(this).serialize(); // Serialize all form data
+
+    // Post data to your PHP processing script
+    $.post( "course_sis_remove.php", formdata, function( data ) {
+        // Act upon the data returned, setting it to #success <div>
+        $("#delete_response").html ( data );
+    });
+
+    return false; // Prevent the form from actually submitting
+});
+
+</script>
+<script>
+	$("#sis_remove").submit(function(){
+
+    // Intercept the form submission
+    var formdata = $(this).serialize(); // Serialize all form data
+
+    // Post data to your PHP processing script
+    $.post( "sis_id_remove.php", formdata, function( data ) {
+        // Act upon the data returned, setting it to #success <div>
+        $("#sis_remove_response").html ( data );
+    });
+
+    return false; // Prevent the form from actually submitting
+});
+	</script>
+
